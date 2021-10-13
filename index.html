@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Color</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="style.css" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <h1 class="Heading">Hello, Click Me!</h1>
+    </div>
+    <script>
+        var box = document.getElementById('box');
+
+        var colors = ['purple', 'yellow', 'orange', 'brown', 'black', 'white'];
+
+        box.onclick = function () {
+            var set = colors.slice(0);
+
+            (function loop() {
+                var color = set.shift();
+
+                document.body.style.backgroundColor = color;
+
+                if (set.length) {
+                    setTimeout(loop, 1000);
+                }
+            })();
+        };
+
+    </script>
+</body>
+
+</html>
